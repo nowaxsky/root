@@ -4,53 +4,61 @@
 	<groupId>org.cpm.zerowastelife</groupId>
 	<artifactId>root</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
 	<name>root</name>
-	<url>http://maven.apache.org</url>
+	<packaging>pom</packaging>
 
 	<properties>
-    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-		
-		<!-- VERSION -->
-		
-		<!-- jdk -->		
+		<maven.comiiler.encoding>UTF-8</maven.comiiler.encoding>
 		<jdk.version>1.8</jdk.version>
-		
 		<!-- junit -->
 		<junit.version>4.12</junit.version>
-		
-		<!-- postgresql -->
+
+		<!-- postgres -->
 		<postgresql.version>9.4-1200-jdbc41</postgresql.version>
-		
+
 		<!-- apache commons lang -->
 		<commons.lang.version>2.6</commons.lang.version>
-		
+
 		<!-- apache commons io -->
 		<commons.io.version>2.5</commons.io.version>
-		
+
+		<!-- commons-httpclient -->
+		<commons-httpclient.version>3.1</commons-httpclient.version>
+
+		<!-- jackson -->
+		<jackson.version>2.8.4</jackson.version>
+
 		<!-- mockito -->
 		<mockito.version>1.10.19</mockito.version>
-		
+
 		<!-- spring boot starter -->
 		<spring.boot.starter.version>1.4.2.RELEASE</spring.boot.starter.version>
-		
+
 		<!-- spring cloud -->
 		<spring.cloud.version>Brixton.SR7</spring.cloud.version>
-		
+
 		<!-- slf4j -->
-		<slf4j.version>1.7.21</slf4j.version>	
-		
+		<slf4j.version>1.7.21</slf4j.version>
+
+		<!-- query dsl -->
+		<querydsl.version>3.7.4</querydsl.version>
+
 		<!-- maven compiler plugin -->
 		<maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
-		
+
+		<!-- mapstruct -->
+		<org.mapstruct.version>1.1.0.Final</org.mapstruct.version>
+
 		<!-- spring ws -->
 		<spring-ws-core.verion>2.4.0.RELEASE</spring-ws-core.verion>
 		
-		<!-- PLUGIN VERSION -->
+		<!-- plugin version -->
 		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
 
 		<maven-assembly-plugin.version>2.5.5</maven-assembly-plugin.version>
@@ -72,8 +80,8 @@
 	</properties>
 
 	<dependencyManagement>
-	  	<dependencies>
-	    	<!-- spring boot -->
+		<dependencies>
+			<!-- spring boot -->
 			<dependency>
 				<!-- Import dependency management from Spring Boot -->
 				<groupId>org.springframework.boot</groupId>
@@ -114,6 +122,7 @@
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring.boot.starter.version}</version>
 			</dependency>
+			
 			<!-- devtools -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -121,58 +130,101 @@
 				<optional>true</optional>
 				<version>${spring.boot.starter.version}</version>
 			</dependency>
-	
+
 			<!-- ws-core -->
 			<dependency>
 				<groupId>org.springframework.ws</groupId>
 				<artifactId>spring-ws-core</artifactId>
 				<version>${spring-ws-core.verion}</version>
 			</dependency>
-			
+
+
 			<!-- commons-lang -->
 			<dependency>
 				<groupId>commons-lang</groupId>
 				<artifactId>commons-lang</artifactId>
 				<version>${commons.lang.version}</version>
 			</dependency>
-	
+
 			<!-- commons io -->
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>${commons.io.version}</version>
 			</dependency>
-	   	
-	   		<!-- junit -->
+
+			<!-- jackson -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<!-- commons httpclient -->
+			<dependency>
+				<groupId>commons-httpclient</groupId>
+				<artifactId>commons-httpclient</artifactId>
+				<version>${commons-httpclient.version}</version>
+			</dependency>
+
+			<!-- junit -->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
-	
+
 			<!-- mockito -->
 			<dependency>
 				<groupId>org.mockito</groupId>
 				<artifactId>mockito-all</artifactId>
 				<version>${mockito.version}</version>
 			</dependency>
-	   		
-	   		<!-- Zerowastelife project -->
-	   		
-	   		<!-- commons -->
+
+			<!-- query dsl -->
+			<dependency>
+				<groupId>com.mysema.querydsl</groupId>
+				<artifactId>querydsl-apt</artifactId>
+				<version>${querydsl.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.mysema.querydsl</groupId>
+				<artifactId>querydsl-jpa</artifactId>
+				<version>${querydsl.version}</version>
+			</dependency>
+
+			<!-- mapstruct -->
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct-jdk8</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+				<version>${org.mapstruct.version}</version>
+			</dependency>
+			
+			<!-- PROJECTS -->
+			<!-- mockito tutorialspoint shared -->
+			<dependency>
+				<groupId>org.cpm.zerowastelife</groupId>
+				<artifactId>mockito-tutorialspoint-shared</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<!-- commons -->
 			<dependency>
 				<groupId>org.cpm.zerowastelife</groupId>
 				<artifactId>commons</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-	
+
 			<!-- db commons -->
 			<dependency>
 				<groupId>org.cpm.zerowastelife</groupId>
 				<artifactId>db-commons</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 	
@@ -221,6 +273,9 @@
 						</execution>
 					</executions>
 				</plugin>
+
+
+
 				<plugin>
 					<groupId>org.jvnet.jaxb2.maven2</groupId>
 					<artifactId>maven-jaxb2-plugin</artifactId>
