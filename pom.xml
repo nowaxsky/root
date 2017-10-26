@@ -20,7 +20,7 @@
 		<junit.version>4.12</junit.version>
 
 		<!-- postgres -->
-		<postgresql.version>9.4-1200-jdbc41</postgresql.version>
+		<postgresql.version>9.4-1201-jdbc4</postgresql.version>
 
 		<!-- apache commons lang -->
 		<commons.lang.version>2.6</commons.lang.version>
@@ -152,12 +152,19 @@
 				<artifactId>commons-io</artifactId>
 				<version>${commons.io.version}</version>
 			</dependency>
+			
+			<!-- postgresql -->
+			<dependency>
+			    <groupId>org.postgresql</groupId>
+			    <artifactId>postgresql</artifactId>
+			    <version>${postgresql.version}</version>   
+			</dependency>		
 
 			<!-- jackson -->
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
-				<version>${jackson.version}</version>
+				<version>${jackson.version}</version>					
 			</dependency>
 
 			<!-- commons httpclient -->
@@ -208,6 +215,13 @@
 			<dependency>
 				<groupId>org.cpm.zerowastelife</groupId>
 				<artifactId>mockito-tutorialspoint-shared</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<!-- lottery drawing service shared -->
+			<dependency>
+				<groupId>org.cpm.zerowastelife</groupId>
+				<artifactId>lottery-drawing-service-shared</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			
