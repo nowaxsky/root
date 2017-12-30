@@ -7,6 +7,12 @@
 	<name>root</name>
 	<packaging>pom</packaging>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+	</parent>
+	
 	<properties>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,10 +44,11 @@
 		<mockito.version>1.10.19</mockito.version>
 
 		<!-- spring boot starter -->
-		<spring.boot.starter.version>1.4.2.RELEASE</spring.boot.starter.version>
+		<spring.boot.starter.version>1.5.9.RELEASE</spring.boot.starter.version>
 
 		<!-- spring cloud -->
-		<spring.cloud.version>Brixton.SR7</spring.cloud.version>
+		<!--  <spring.cloud.version>Brixton.SR7</spring.cloud.version> -->
+		<spring.cloud.version>Edgware.RELEASE</spring.cloud.version>
 
 		<!-- slf4j -->
 		<slf4j.version>1.7.21</slf4j.version>
@@ -122,6 +129,14 @@
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring.boot.starter.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 			
 			<!-- devtools -->
 			<dependency>
@@ -317,8 +332,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>${maven-deploy-plugin.version}</version>
+				<artifactId>maven-deploy-plugin</artifactId>	
 			</plugin>
 		</plugins>
 	</build>
