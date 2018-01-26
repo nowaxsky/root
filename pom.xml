@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.cpm.zerowastelife</groupId>
+	<groupId>org.cpm.zwl</groupId>
 	<artifactId>root</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>root</name>
@@ -228,28 +228,28 @@
 			<!-- PROJECTS -->
 			<!-- mockito tutorialspoint shared -->
 			<dependency>
-				<groupId>org.cpm.zerowastelife</groupId>
+				<groupId>org.cpm.zwl</groupId>
 				<artifactId>mockito-tutorialspoint-shared</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			
-			<!-- lottery drawing service shared -->
+			<!-- file upload download service shared -->
 			<dependency>
-				<groupId>org.cpm.zerowastelife</groupId>
-				<artifactId>lottery-drawing-service-shared</artifactId>
+				<groupId>org.cpm.zwl</groupId>
+				<artifactId>file-upload-download-service-shared</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			
 			<!-- commons -->
 			<dependency>
-				<groupId>org.cpm.zerowastelife</groupId>
+				<groupId>org.cpm.zwl</groupId>
 				<artifactId>commons</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
 			<!-- db commons -->
 			<dependency>
-				<groupId>org.cpm.zerowastelife</groupId>
+				<groupId>org.cpm.zwl</groupId>
 				<artifactId>db-commons</artifactId>
 				<version>${project.version}</version>
 			</dependency>
